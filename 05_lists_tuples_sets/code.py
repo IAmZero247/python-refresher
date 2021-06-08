@@ -2,7 +2,7 @@ l = ["Bob", "Rolf", "Anne"]
 t = ("Bob", "Rolf", "Anne")
 s = {"Bob", "Rolf", "Anne"}
 
-# Access individual items in lists and tuples using the index.
+# Subscript notation - Access individual items in lists and tuples using the index.
 
 print(l[0])
 print(t[0])
@@ -12,6 +12,7 @@ print(t[0])
 
 l[0] = "Smith"
 # t[0] = "Smith"  # This gives an error because tuples are "immutable".
+
 
 print(l)
 print(t)

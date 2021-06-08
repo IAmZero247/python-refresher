@@ -28,4 +28,11 @@ starts_s = [friend for friend in friends if friend.startswith("S")]  # same as a
 print(friends)
 print(starts_s)
 print(friends is starts_s)
+print("friends: ", id(friends[0]), " starts_s: ", id(starts_s[0]))
 print("friends: ", id(friends), " starts_s: ", id(starts_s))
+
+
+even = [n for n in range(100) if n % 2 ==0]
+odd =[n for n in range(100) if n % 2 ==1]
+print(even)
+print(odd)

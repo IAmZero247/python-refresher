@@ -12,9 +12,13 @@ class ClassTest:
 
 
 instance = ClassTest()
+#first way - instance
 instance.instance_method()
-
+#second way - instance
+ClassTest.instance_method(instance)
+#class method
 ClassTest.class_method()
+#static method
 ClassTest.static_method()
 
 # -- What are they used for? --

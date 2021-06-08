@@ -14,6 +14,7 @@ friends = [
 ]
 
 print(friends)
+print(friends[1]["name"])
 
 # -- Iteration --
 

@@ -5,6 +5,9 @@ x, y = 5, 11
 # -- Destructuring in for loops --
 
 student_attendance = {"Rolf": 96, "Bob": 80, "Anne": 100}
+student_attendance_list = list(student_attendance.items())
+
+print(student_attendance_list)
 
 for student, attendance in student_attendance.items():
     print(f"{student}: {attendance}")
