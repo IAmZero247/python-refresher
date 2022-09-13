@@ -4,7 +4,7 @@ def add(x, y=3):
 
 add(5)  # 8
 add(5, 8)  # 13
-add(y=3)  # Error, missing x
+#add(y=3)  # Error, missing x
 
 # -- Order of default parameters --
 

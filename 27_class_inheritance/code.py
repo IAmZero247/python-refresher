@@ -5,10 +5,13 @@ class Device:
         self.connected = True
 
     def __str__(self):
-        return f"Device {self.name!r} ({self.connected_by})"
+        return f"Device ({self.name!r} |{self.connected_by})"
 
     def disconnect(self):
         self.connected = False
+
+    def connect(self):
+        self.connected = True
 
 
 # printer = Device("Printer", "USB")
@@ -25,11 +28,13 @@ class Printer(Device):
         self.remaining_pages = capacity
 
     def __str__(self):
-        return f"{super().__str__()} ({self.remaining_pages} pages remaining)"
+        return f"{super().__str__()} | ({self.remaining_pages} pages remaining)"
 
     def print(self, pages):
         if not self.connected:
-            raise TypeError("Device is disconnected at this time, cannot print.")
+            print("Device is disconnected at this time, cannot print.")
+            return
+            #raise TypeError("Device is disconnected at this time, cannot print.")  # ideally line 35-36 should be replace with this
         print(f"Printing {pages} pages.")
         self.remaining_pages -= pages
 
@@ -41,3 +46,6 @@ printer.print(50)
 print(printer)
 printer.disconnect()
 printer.print(30)  # Error
+printer.connect()
+printer.print(40)
+print(printer)

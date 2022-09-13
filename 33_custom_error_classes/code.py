@@ -44,9 +44,12 @@ class Book:
         self.pages_read += pages
         print(f"You have now read {self.pages_read} pages out of {self.page_count}")
 
+try:
+    python101 = Book("Python 101", 50)
+    python101.read(35)
+    python101.read(
+        50
+    )  # This now raises an error, which has a helpful name and a helpful error message.
+except TooManyPagesReadError as e :
+    print(e)
 
-python101 = Book("Python 101", 50)
-python101.read(35)
-python101.read(
-    50
-)  # This now raises an error, which has a helpful name and a helpful error message.

@@ -3,9 +3,11 @@ def named(**kwargs):
     print(kwargs)
 
 
+print("named-1st")
 named(name="Bob", age=25)
 # named({"name": "Bob", "age": 25})  # Error, the dictionary is actually a positional argument.
 
+print("named-2nd")
 # Unpack dict into arguments. This is OK, but slightly more confusing. Good when working with variables though.
 named(**{"name": "Bob", "age": 25})
 

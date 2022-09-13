@@ -1,15 +1,23 @@
 user = {"username": "jose", "access_level": "guest"}
 
 
+#Decorator Using HOF
+
+
+'''
+# Requirement - below func should execute only for admin
 def get_admin_password():
     return "1234"
 
-
 print(get_admin_password())  # Can do this even though I'm a "guest"
+'''
 
+'''
+# Using if to achieve 
 # Now this only runs if I'm an admin... but
 if user["access_level"] == "admin":
     print(get_admin_password())
+
 
 print(get_admin_password())  # The function itself is still unsecured
 
@@ -26,9 +34,15 @@ def secure_get_admin():
 
 secure_get_admin()
 print(get_admin_password())
+'''
 
+
+'''
 # We want to get rid of get_admin_password so that only the secure function remains!
 # Maybe something like this?
+
+def get_admin_password():
+    return "1234"
 
 
 def secure_function(func):
@@ -36,14 +50,18 @@ def secure_function(func):
         return func
 
 
-user = {"username": "bob", "access_level": "admin"}
+#user = {"username": "bob", "access_level": "admin"} #uncomment to remove error in line  45
+
 
 get_admin_password = secure_function(get_admin_password)
 print(get_admin_password())  # Error!
 
+
 # When we ran `secure_function`, we checked the user's access level. Because at that point the user was not an admin, the function did not `return func`. Therefore `get_admin_password` is set to `None`.
 
 # We want to delay overwriting until we run the function
+'''
+
 
 
 def get_admin_password():

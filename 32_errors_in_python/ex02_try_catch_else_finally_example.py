@@ -1,24 +1,31 @@
-def divide(dividend, divisor):
-    if divisor == 0:
-        raise ZeroDivisionError("Divisor cannot be 0.")
 
-    return dividend / divisor
-
-
-grades = []  # Imagine we have no grades yet
-# average = divide(sum(grades) / len(grades))  # Error!
+'''
+Exception:
 
 try:
-    average = divide(sum(grades), len(grades))
-    print(average)
-except ZeroDivisionError as e:
-    print(e)
-    # Much friendlier error message because now we're dealing with it
-    # In a "students and grades" context, not purely in a mathematical context
-    # I.e. it doesn't make sense to put "There are no grades yet in your list"
-    # inside the `divide` function, because you could be dividing something
-    # that isn't grades, in another program.
-    print("There are no grades yet in your list.")
+   #<Code>
+   #Running First
+except:
+   #<Code>
+   If Execption Occurs in try block execute this code
+except:
+   #<Code>
+   If Execption Occurs in try block execute this code
+except:
+   #<Code>
+   If Execption Occurs in try block execute this code
+else:
+   #<Code>
+   #Executes if try block succeeds
+finally:
+   <code>
+   #No matter what happen this piece of code will execute
+'''
+
+
+
+
+
 
 # -- Built-in errors --
 
@@ -31,20 +38,18 @@ except ZeroDivisionError as e:
 
 # -- Doing something if no error is raised --
 
-grades = [90, 100, 85]
-
-try:
-    average = divide(sum(grades), len(grades))
-except ZeroDivisionError:
-    print("There are no grades yet in your list.")
-else:
-    print(f"The average was {average}")
 
 
 # -- Doing something no matter what --
 # This is particularly useful when dealing with resources that you open and then must close
 # The `finally` part always runs, so you could use it to close things down
 # You can also use it to print something at the end of your try-block if you like.
+
+def divide(dividend, divisor):
+    if divisor == 0:
+        raise ZeroDivisionError("Divisor cannot be 0.")
+
+    return dividend / divisor
 
 students = [
     {"name": "Bob", "grades": [75, 90]},

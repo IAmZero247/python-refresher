@@ -1,9 +1,10 @@
 # -- While loop --
 
+print("While Loop Simple Example")
 number = 7
 play = input("Would you like to play? (Y/n) ")
 
-while play != "n":
+while play.lower() != "n":
     user_number = int(input("Guess our number: "))
     if user_number == number:
         print("You guessed correctly!")
@@ -16,11 +17,11 @@ while play != "n":
 
 
 # -- The break keyword --
-
+print("Break Example")
 while True:
     play = input("Would you like to play? (Y/n) ")
 
-    if play == "n":
+    if play.lower() == "n":
         break  # Exit the loop
 
     user_number = int(input("Guess our number: "))

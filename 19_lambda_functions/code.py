@@ -28,6 +28,7 @@ def double(x):
 
 
 sequence = [1, 3, 5, 9]
+print( "sequence :" , type(sequence))
 
 doubled_list_comprehension = [
     double(x) for x in sequence
@@ -40,7 +41,7 @@ print(list(doubled_with_map))
 
 sequence = [1, 3, 5, 9]
 doubled_list_comprehension_with_lambda = [
-    (lambda x: x *2)(x) for x in sequence
+    (lambda x1: x1 *2)(x) for x in sequence
 ]
 doubled_with_map_and_lambda = map(lambda x: x * 2, sequence)
 print(doubled_list_comprehension_with_lambda)

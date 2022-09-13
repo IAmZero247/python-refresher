@@ -1,4 +1,8 @@
-def list_avg(sequence: list) -> float:
+from typing import List   #Tuple Set etc .
+def list_avg1(sequence: list) -> float:
+    return sum(sequence) / len(sequence)
+
+def list_avg2(sequence: List) -> float:
     return sum(sequence) / len(sequence)
 
 
@@ -44,7 +48,7 @@ class Book:
         self.weight = weight
 
     def __repr__(self) -> str:
-        return f"<Book {self.name}, {self.book_type}, weighing {self.weight}g>"
+        return f"<Book name: {self.name}, type: {self.book_type}, weighing: {self.weight}g>"
 
     @classmethod
     def hardcover(cls, name: str, page_weight: int) -> "Book":

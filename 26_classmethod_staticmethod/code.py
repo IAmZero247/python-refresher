@@ -1,4 +1,18 @@
+#
+# @classmethod decorator -> first argument is Class Itself
+# @staticmethod decorator -> removes ClassLevel/InstanceLevel info from method
+# @property decorator -> 1. applies only to method with zero argument
+#                        2. method virtually act as property
+#                        3. use only when the statments inside method wont change state of
+#                           of any of the property inside class
+#
+#
 class ClassTest:
+
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+
     def instance_method(self):
         print(f"Called instance_method of {self}")
 
@@ -10,46 +24,22 @@ class ClassTest:
     def static_method():
         print(f"Called static_method. We don't get any object or class info here.")
 
+    @property
+    def property_method(self):
+        return self.p1 - self.p2
 
-instance = ClassTest()
+instance = ClassTest(10 ,5)
 #first way - instance
 instance.instance_method()
 #second way - instance
 ClassTest.instance_method(instance)
 #class method
 ClassTest.class_method()
+
+
+
 #static method
 ClassTest.static_method()
+#property method
+print('property decorated method called ', instance.property_method)
 
-# -- What are they used for? --
-
-# Instance methods are used for most things. When you want to produce an action that uses the data stored in an object.
-# Static methods are used to just place a method inside a class because you feel it belongs there (i.e. for code organisation, mostly!)
-# Class methods are often used as factories.
-
-
-class Book:
-    TYPES = ("hardcover", "paperback")
-
-    def __init__(self, name, book_type, weight):
-        self.name = name
-        self.book_type = book_type
-        self.weight = weight
-
-    def __repr__(self):
-        return f"<Book {self.name}, {self.book_type}, weighing {self.weight}g>"
-
-    @classmethod
-    def hardcover(cls, name, page_weight):
-        return cls(name, cls.TYPES[0], page_weight + 100)
-
-    @classmethod
-    def paperback(cls, name, page_weight):
-        return cls(name, cls.TYPES[1], page_weight)
-
-
-heavy = Book.hardcover("Harry Potter", 1500)
-light = Book.paperback("Python 101", 600)
-
-print(heavy)
-print(light)

@@ -11,6 +11,13 @@ print(10 != 10)  # False
 
 friends = ["Rolf", "Bob"]
 abroad = ["Rolf", "Bob"]
+friendsShallowCopy = friends
 
 print(friends == abroad)  # True
 print(friends is abroad)  # False
+print(friendsShallowCopy is friends) #True
+
+friends[1] = "Tara"
+friendsShallowCopy[0] ="Albert"
+print(friends)
+print(friendsShallowCopy)

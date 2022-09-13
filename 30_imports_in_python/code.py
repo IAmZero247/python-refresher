@@ -1,8 +1,13 @@
-# -- importing --
+# -- importing -- first way
 
-from mymodule import divide
-
+from mymodule import divide, echo50
 print(divide(10, 2))
+echo50()
+
+# -- importing -- second way
+# import mymodule
+# print(mymodule.divide(10,2))
+#
 
 # -- __name__ --
 

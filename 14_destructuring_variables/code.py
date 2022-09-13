@@ -6,14 +6,16 @@ x, y = 5, 11
 
 student_attendance = {"Rolf": 96, "Bob": 80, "Anne": 100}
 student_attendance_list = list(student_attendance.items())
-
+#[('Rolf', 96), ('Bob', 80), ('Anne', 100)]
 print(student_attendance_list)
+student_attendance_dt_items = student_attendance.items()
+print(student_attendance_dt_items)
 
 for student, attendance in student_attendance.items():
     print(f"{student}: {attendance}")
 
 
-# -- Another example --
+# -- Another example -- List With Tuples
 
 people = [("Bob", 42, "Mechanic"), ("James", 24, "Artist"), ("Harry", 32, "Lecturer")]
 

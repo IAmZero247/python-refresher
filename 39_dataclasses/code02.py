@@ -31,7 +31,20 @@ class Student:
 
 
 bob = Student("Bob")
-
 bob.take_exam(90)
 print(bob.grades)
 print(bob)
+
+
+alex = Student("Alex")
+alex.take_exam(100)
+alex.take_exam(50)
+print(alex.grades)
+print(alex)
+
+lis = [bob , alex]
+tup = (bob, alex)
+
+
+print(lis)
+print(tup)

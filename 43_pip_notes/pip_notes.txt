@@ -1,0 +1,34 @@
+pip:
+****
+1) pip is a tool for installing python packages.
+2) With pip you can search, download, install or upgrade packages from PyPi.
+
+Installing pip for python 3:
+***************************
+    sudo apt update -y
+    sudo apt install python3-pip
+
+Testing
+*******
+
+pip --version
+#pip2 --version
+pip3 --version
+
+pip 21.0.1 from C:\Softwares\anaconda3\envs\PY-HelloSpark\lib\site-packages\pip (python 3.9)
+
+
+
+Example -> Scrapy: Which is used for scraping & extracting data from websites.
+******************************************************************************
+pip3 install Scrapy
+pip3 list
+pip3 freeze | grep Scrapy
+pip3 show Scrapy
+pip3 uninstall Scrapy
+
+pip3 install Scrapy==1.5
+
+pip3 list --outdated | grep Scrapy
+
+pip3 install --upgrade Scrapy
